@@ -53,67 +53,67 @@ class MmkvStoragePlugin : FlutterPlugin, MethodCallHandler {
             "encodeBool" -> {
                 val key: String = call.argument("key")!!
                 val aBool: Boolean = call.argument("aBool")!!
-                result.success(mmkv.encode(key, aBool))
+                result.success(mmkv?.encode(key, aBool))
             }
             "decodeBool" -> {
                 val key: String = call.argument("key")!!
-                result.success(mmkv.decodeBool(key))
+                result.success(mmkv?.decodeBool(key))
             }
             "encodeInt" -> {
                 val key: String = call.argument("key")!!
                 val aInt: Int = call.argument("aInt")!!
-                result.success(mmkv.encode(key, aInt))
+                result.success(mmkv?.encode(key, aInt))
             }
             "decodeInt" -> {
                 val key: String = call.argument("key")!!
-                result.success(mmkv.decodeInt(key))
+                result.success(mmkv?.decodeInt(key))
             }
             "encodeLong" -> {
                 val key: String = call.argument("key")!!
                 val aLong: Long = call.argument("aLong")!!
-                result.success(mmkv.encode(key, aLong))
+                result.success(mmkv?.encode(key, aLong))
             }
             "decodeLong" -> {
                 val key: String = call.argument("key")!!
-                result.success(mmkv.decodeLong(key))
+                result.success(mmkv?.decodeLong(key))
             }
             "encodeDouble" -> {
                 val key: String = call.argument("key")!!
                 val aDouble: Double = call.argument("aDouble")!!
-                result.success(mmkv.encode(key, aDouble))
+                result.success(mmkv?.encode(key, aDouble))
             }
             "decodeDouble" -> {
                 val key: String = call.argument("key")!!
-                result.success(mmkv.decodeDouble(key))
+                result.success(mmkv?.decodeDouble(key))
             }
             "encodeString" -> {
                 val key: String = call.argument("key")!!
                 val aString: String = call.argument("aString")!!
-                result.success(mmkv.encode(key, aString))
+                result.success(mmkv?.encode(key, aString))
             }
             "decodeString" -> {
                 val key: String = call.argument("key")!!
-                result.success(mmkv.decodeString(key))
+                result.success(mmkv?.decodeString(key))
             }
             "encodeUint8List" -> {
                 val key: String = call.argument("key")!!
                 val aBytes: ByteArray = call.argument("aBytes")!!
-                result.success(mmkv.encode(key, aBytes))
+                result.success(mmkv?.encode(key, aBytes))
             }
             "decodeUint8List" -> {
                 val key: String = call.argument("key")!!
-                result.success(mmkv.decodeBytes(key))
+                result.success(mmkv?.decodeBytes(key))
             }
             "removeValueForKey" -> {
                 val key: String = call.argument("key")!!
-                mmkv.removeValueForKey(key)
+                mmkv?.removeValueForKey(key)
             }
             "removeAll" -> {
-                mmkv.clearAll()
+                mmkv?.clearAll()
             }
             "containsKey" -> {
                 val key: String = call.argument("key")!!
-                result.success(mmkv.containsKey(key))
+                result.success(mmkv?.containsKey(key))
             }
             else -> {
                 result.notImplemented()
